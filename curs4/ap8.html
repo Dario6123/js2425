@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100numere</title>
+    <style>
+        #number-container {
+            display: flex; 
+            flex-wrap: wrap;
+            gap: 5px; 
+        }
+        .number-box {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #ccc;
+        }
+        .even {
+            background-color: green;
+        }
+        .odd {
+            background-color: blue;
+        }
+        .prime {
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="number-container"></div>
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= numSqrt; i++){
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        for (let i = 0; i < 100; i++) {
+            let numberBox = document.createElement("div");
+            numberBox.textContent = i;
+            numberBox.classList.add("number-box");
+            if (i % 2 === 0) {
+                numberBox.classList.add("even");
+            } else {
+                numberBox.classList.add("odd");
+            } 
+            // if (isPrime(i)) {
+            // numberBox.classList.add("prime");
+            // }
+            numberContainer.appendChild(numberBox);
+        }
+    </script>
+</body>
+</html>
